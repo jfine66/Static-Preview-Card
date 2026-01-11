@@ -44,21 +44,28 @@ body {
 
 .main p {
     font-size: 1.3rem;
+    padding: 1rem;
 }
 
 /***** Stats  *****/
 .stats {
     text-transform: uppercase;
     color: hsl(0, 0%, 100%, 0.75);
+    margin-top: 0;
     display: flex;
-    height: 40%;
     flex-direction: column;
+
 }
 
 /* Prevents flexbox from overflowing its parent*/
 .stats p {
     flex: 1 1 0;
     min-height: 0;
+    letter-spacing: 0.1rem;
+}
+
+.stats p:first-child {
+    margin-top: 0;
 }
 
 .stats p:first-child span {
@@ -85,7 +92,25 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (min-width: 1000px) {
+@media (min-width:666px) {
+    .img-container {
+        background-position-y: 15%;
+    }
+
+    .stats {
+        flex-direction: row;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        translate: -50%;
+    }
+
+    .stats p:first-child {
+        margin-top: 1em;
+    }
+}
+
+@media (min-width: 1045px) {
     .main {
         width: 50%;
         height: 50%;
@@ -108,13 +133,16 @@ body {
         flex-direction: row;
         height: auto;
         text-align: initial;
+
     }
 
     .stats p {
         min-width: 0;
         font-size: 0.7rem;
-        padding: 1em;
-        letter-spacing: 0.1rem;
+    }
+
+    .stats p:first-of-type {
+        margin-top: 1em;
     }
 
     .img-container {
@@ -130,8 +158,15 @@ body {
     }
 }
 
-@media (max-height: 800px) {
-    .main {
+@media (max-height: 700px) {
+    /* .main {
         min-height: 400px;
-    }
+    } */
+
+    /* .stats {
+        position: absolute;
+        bottom: 4em;
+        right: 33%;
+    } */
+
 }
