@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "Inter";
+    local: "Inter";
+    src: url("https://fonts.google.com/specimen/Inter");
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 15px;
+    color: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: hsl(233, 47%, 7%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Inter";
+}
+
+.main {
+    background-color: hsl(244, 37%, 16%);
+    color: hsl(0, 0%, 100%, 0.75);
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    /* border: 2px solid white; */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.main * {
+    margin: 1em auto;
+}
+
+.main span {
+    color: hsl(277, 64%, 61%);
+}
+
+.main h1 {
+    color: hsl(0, 0%, 100%);
+}
+
+.main p {
+    font-size: 1.3rem;
+}
+
+.stats {
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%, 0.75);
+}
+
+.main p:nth-of-type(2) span {
+    text-transform: none;
+}
+
+.stats span {
+    font-weight: 700;
+    font-size: 2rem;
+    display: block;
+    color: hsl(0, 0%, 100%);
+    margin: 0.2em 0;
+}
+
+.img-container {
+    margin: 0;
+    height: 25%;
+    border-radius: 5px 5px 0 0;
+    background-image:linear-gradient(
+        hsl(277, 64%, 61%, 0.5)
+    ), url("images/image-header-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
