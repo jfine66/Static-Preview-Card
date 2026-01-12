@@ -23,16 +23,12 @@ body {
     background-color: hsl(244, 37%, 16%);
     color: hsl(0, 0%, 100%, 0.75);
     width: 90%;
-    height: 90%;
+    height: 90vh;
     margin: 0 auto;
     text-align: center;
     border-radius: 5px;
 }
-
-.main * {
-    margin: 1em auto;
-}
-
+ 
 .main span {
     color: hsl(277, 64%, 61%);
 }
@@ -40,11 +36,18 @@ body {
 .main h1 {
     color: hsl(0, 0%, 100%);
     font-weight: 700;
+    margin: 0.5em auto;
+    font-size: 2em;
 }
 
 .main p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding: 1rem;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
 }
 
 /***** Stats  *****/
@@ -54,13 +57,12 @@ body {
     margin-top: 0;
     display: flex;
     flex-direction: column;
-
 }
 
 /* Prevents flexbox from overflowing its parent*/
 .stats p {
     flex: 1 1 0;
-    min-height: 0;
+    font-size: 1.3rem;
     letter-spacing: 0.1rem;
 }
 
@@ -77,7 +79,7 @@ body {
     font-size: 2rem;
     display: block;
     color: hsl(0, 0%, 100%);
-    margin: 0.2em 0;
+    margin: 0.1em 0;
 }
 
 /***** Image  *****/
@@ -92,81 +94,87 @@ body {
     background-repeat: no-repeat;
 }
 
-@media (min-width:666px) {
+/***** Small Screens of Landscape Phones *****/
+@media (min-width: 666px) {
     .img-container {
         background-position-y: 15%;
     }
 
     .stats {
         flex-direction: row;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        translate: -50%;
-    }
-
-    .stats p:first-child {
-        margin-top: 1em;
     }
 }
 
-@media (min-width: 1045px) {
+/***** Medium screen *****/
+@media (min-width: 666px) and (min-height: 500px) {
+    .main h1 {
+        font-size: 4em;
+    }
+
+    .main h1 + p {
+        font-size: 2em;
+    }
+    
+    .stats {
+        flex-direction: column;
+    }
+}
+
+/***** Ipad's and larger *****/
+@media (min-width: 1080px) {
     .main {
-        width: 50%;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 60%;
         height: 50%;
-        position: relative;
     }
 
-    .main * {
-        width: 50%;
-        margin: 1em 0;
-        padding: 0 1em;
-        height: 20%;
-    }
+    .main h1 {
+        font-size: 3em;
+        margin-bottom: 0;
+        padding: 0 0.5em;
+    } 
 
-    .main span, .img-container {
-        margin: 0;
-        padding: 0;
+    .main h1 + p {
+        font-size: 1.5em;
+        padding-bottom: inherit;
     }
 
     .stats {
-        flex-direction: row;
-        height: auto;
-        text-align: initial;
-
+        flex-direction: initial;
     }
 
-    .stats p {
+    .stats p{
         min-width: 0;
-        font-size: 0.7rem;
-    }
-
-    .stats p:first-of-type {
-        margin-top: 1em;
+        font-size: 1em;
     }
 
     .img-container {
-        height: 100%;
         width: 50%;
-        background-image:linear-gradient(
-            hsl(277, 64%, 61%, 0.5)
-            ), url("images/image-header-desktop.jpg");
-        background-size: 100% 100%;
+        height: 100%;
+        background-image: linear-gradient(hsl(277, 64%, 61%, 0.5)), url("images/image-header-desktop.jpg");
+        background-position-x: 100%;
         border-radius: 0 5px 5px 0;
-        position: absolute;
-        right: 0;
+    }
+
+    .text-container {
+        width: 50%;
+        height: 100%;
+        justify-content: space-around;
     }
 }
 
-@media (max-height: 700px) {
-    /* .main {
-        min-height: 400px;
-    } */
+/***** Small height phones *****/
+@media (max-height: 800px) {
+    .main {
+        height: 100vh;
+    }
 
-    /* .stats {
-        position: absolute;
-        bottom: 4em;
-        right: 33%;
-    } */
-
+    .text-container p {
+        font-size: 1.3em;
+    }
 }
+
+
+
+
