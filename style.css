@@ -17,6 +17,7 @@ body {
     height: 100vh;
     min-height: 100vh;
     font-family: "Inter";
+    position: relative;
 }
 /***** Main  *****/
 .main {
@@ -45,6 +46,19 @@ body {
     padding: 1rem;
 }
 
+/***** Image  *****/
+.img-container {
+    margin: 0;
+    height: 25%;
+    border-radius: 5px 5px 0 0;
+    background-image:linear-gradient(
+    hsl(277, 64%, 61%, 0.5)
+    ), url("images/image-header-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/***** Text *****/
 .text-container {
     display: flex;
     flex-direction: column;
@@ -82,16 +96,8 @@ body {
     margin: 0.1em 0;
 }
 
-/***** Image  *****/
-.img-container {
-    margin: 0;
-    height: 25%;
-    border-radius: 5px 5px 0 0;
-    background-image:linear-gradient(
-    hsl(277, 64%, 61%, 0.5)
-    ), url("images/image-header-mobile.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+footer {
+    display: none;
 }
 
 /***** Small Screens of Landscape Phones *****/
@@ -161,6 +167,12 @@ body {
         width: 50%;
         height: 100%;
         justify-content: space-around;
+    }
+
+    footer {
+        display: block;
+        position: absolute;
+        bottom: 0;
     }
 }
 
